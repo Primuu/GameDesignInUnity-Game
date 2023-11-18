@@ -15,7 +15,7 @@ public static class Extensions
         float distance = 0.375f; // Distance at which collision is checked
 
         // Method for detecting objects on a specific path (in this case, in the form of a circle)
-        RaycastHit2D hit = Physics2D.CircleCast(rb.position, radius, direction, distance, layerMask);
+        RaycastHit2D hit = Physics2D.CircleCast(rb.position, radius, direction.normalized, distance, layerMask);
         return hit.collider != null && hit.rigidbody != rb; 
     }
 
