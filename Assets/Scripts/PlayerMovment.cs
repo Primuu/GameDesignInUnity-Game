@@ -43,6 +43,11 @@ public class PlayerMovment : MonoBehaviour
         inputAxis = Input.GetAxis("Horizontal");
         // Smoothly move the value from the current value to the target value
         velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed * Time.deltaTime);
+
+        // Resetting the value when running into walls
+        if (rb.Raycast(Vector2.right * velocity.x)) {
+            velocity.x = 0f;
+        }
     }
 
     private void GroundedMovement() 
