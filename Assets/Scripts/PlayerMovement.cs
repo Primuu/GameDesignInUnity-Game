@@ -97,10 +97,16 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(position);
     }
 
-    // Function responsible for the effect of "bouncing head" off a block above the player when he jumps
     private void OnCollisionEnter2D(Collision2D collision) 
     {
-        if (collision.gameObject.layer != LayerMask.NameToLayer("PowerUp")) {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy")) {
+            // Logic responsible for the effect of "enemy bouncing"
+            if (transform.DotTest(collision.transform, Vector2.down)) {
+                velocity.y = jumpForce / 2f;
+                jumping = true;
+            }
+        } else if (collision.gameObject.layer != LayerMask.NameToLayer("PowerUp")) {
+            // Logic responsible for the effect of "bouncing head" off a block above the player when he jumps
             if (transform.DotTest(collision.transform, Vector2.up)) {
                 velocity.y = 0f;
             }
