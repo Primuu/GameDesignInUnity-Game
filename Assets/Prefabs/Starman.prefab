@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22eef5e22dc4e144b810e290c0c5825e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemOutSound: {fileID: 8300000, guid: ea87d81105880b5439bd491bf2597f83, type: 3}
 --- !u!114 &3461459692470848830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,3 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  starpowerDuration: 10
+  magicMushroomScore: 1000
+  starpowerScore: 1000
+  powerUpSound: {fileID: 8300000, guid: 3382ed32ca585bf43b50f02f3173aa2f, type: 3}

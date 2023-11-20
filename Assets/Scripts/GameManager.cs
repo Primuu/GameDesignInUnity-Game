@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public int coins { get; private set; }
     public int score;
 
+    public AudioClip coinSound;
+    public AudioClip addLifeSound;
+
     private void Awake()
     {
         if (Instance != null) {
@@ -115,6 +118,7 @@ public class GameManager : MonoBehaviour
             coins = 0;
         }
 
+        AudioManager.Instance.PlaySFX(coinSound);
         UIScoreManager.Instance.UpdateUI(score, coins, world, stage, lives);
     }
 
@@ -122,6 +126,7 @@ public class GameManager : MonoBehaviour
     {
         lives++;
 
+        AudioManager.Instance.PlaySFX(addLifeSound);
         UIScoreManager.Instance.UpdateUI(score, coins, world, stage, lives);
     }
 

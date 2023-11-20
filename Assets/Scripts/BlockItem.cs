@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class BlockItem : MonoBehaviour
 {
+    public AudioClip itemOutSound;
+    
     private void Start()
     {
         StartCoroutine(Animate());
@@ -29,6 +31,8 @@ public class BlockItem : MonoBehaviour
 
         Vector3 startPosition = transform.localPosition;
         Vector3 endPosition = transform.localPosition + Vector3.up;
+
+        AudioManager.Instance.PlaySFX(itemOutSound);
 
         while (elapsed < duration)
         {
