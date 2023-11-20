@@ -19,8 +19,7 @@ public class MenuManager : MonoBehaviour
 
     private void Update()
     {
-        if (play && Input.GetKeyDown(KeyCode.Escape))
-        {
+        if (play && Input.GetKeyDown(KeyCode.Escape)) {
             ToggleMenu();
         }
     }
@@ -30,17 +29,28 @@ public class MenuManager : MonoBehaviour
         menuPanel.SetActive(!menuPanel.activeSelf);
         restartButton.SetActive(play);
 
-        Time.timeScale = menuPanel.activeSelf ? 0f : 1f;
+        if (menuPanel.activeSelf) {
+            Time.timeScale = 0f;
+            AudioManager.Instance.PauseMusic();
+        } else {
+            Time.timeScale = 1f;
+            AudioManager.Instance.ResumeMusic();
+        }
     }
 
     public void ResumeGame()
     {
         menuPanel.SetActive(false);
         Time.timeScale = 1f;
+
+        if (!play) {
+            AudioManager.Instance.PlayTheme();
+        }
         
         play = true;
         playButtonText.text = "RESUME";
         restartButton.SetActive(play);
+        AudioManager.Instance.ResumeMusic();
     }
 
     public void RestartGame()
@@ -49,6 +59,8 @@ public class MenuManager : MonoBehaviour
 
         menuPanel.SetActive(false);
         Time.timeScale = 1f;
+
+        AudioManager.Instance.PlayMusicFromStart();
     }
 
     public void QuitGame()
