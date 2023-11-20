@@ -577,11 +577,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &158482380 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 373381013936968963, guid: 11ed121131dccce4b96bf5a5365ba6a6, type: 3}
-  m_PrefabInstance: {fileID: 2863294960402833754}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &173006232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -980,6 +975,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2281235336086812007, guid: bd1855d988477d24cb3efb18af2f6f9d, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 262779853753743359, guid: b8da2c9b883396d49bde27be6ff60904, type: 3}
     - target: {fileID: 6633841748553365075, guid: bd1855d988477d24cb3efb18af2f6f9d, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2128,6 +2127,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MysteryBlock (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2281235336086812007, guid: bd1855d988477d24cb3efb18af2f6f9d, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 262779853753743359, guid: b8da2c9b883396d49bde27be6ff60904, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2636,6 +2639,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MysteryBlock (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2281235336086812007, guid: bd1855d988477d24cb3efb18af2f6f9d, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 262779853753743359, guid: b8da2c9b883396d49bde27be6ff60904, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3441,6 +3448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MysteryBlock (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2281235336086812007, guid: bd1855d988477d24cb3efb18af2f6f9d, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 262779853753743359, guid: b8da2c9b883396d49bde27be6ff60904, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3887,6 +3898,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MysteryBlock (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2281235336086812007, guid: bd1855d988477d24cb3efb18af2f6f9d, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 262779853753743359, guid: b8da2c9b883396d49bde27be6ff60904, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4407,6 +4422,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MysteryBlock (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2281235336086812007, guid: bd1855d988477d24cb3efb18af2f6f9d, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 262779853753743359, guid: b8da2c9b883396d49bde27be6ff60904, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5619,6 +5638,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MysteryBlock (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2281235336086812007, guid: bd1855d988477d24cb3efb18af2f6f9d, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 262779853753743359, guid: b8da2c9b883396d49bde27be6ff60904, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6077,6 +6100,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MysteryBlock
       objectReference: {fileID: 0}
+    - target: {fileID: 2281235336086812007, guid: bd1855d988477d24cb3efb18af2f6f9d, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 262779853753743359, guid: b8da2c9b883396d49bde27be6ff60904, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6599,6 +6626,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MysteryBlock (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 2281235336086812007, guid: bd1855d988477d24cb3efb18af2f6f9d, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 262779853753743359, guid: b8da2c9b883396d49bde27be6ff60904, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7169,6 +7200,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MysteryBlock (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2281235336086812007, guid: bd1855d988477d24cb3efb18af2f6f9d, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 262779853753743359, guid: b8da2c9b883396d49bde27be6ff60904, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7355,6 +7390,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MysteryBlock (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 2281235336086812007, guid: bd1855d988477d24cb3efb18af2f6f9d, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 262779853753743359, guid: b8da2c9b883396d49bde27be6ff60904, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8216,6 +8255,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MysteryBlock (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2281235336086812007, guid: bd1855d988477d24cb3efb18af2f6f9d, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 262779853753743359, guid: b8da2c9b883396d49bde27be6ff60904, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8736,6 +8779,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MysteryBlock (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2281235336086812007, guid: bd1855d988477d24cb3efb18af2f6f9d, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 262779853753743359, guid: b8da2c9b883396d49bde27be6ff60904, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8783,7 +8830,6 @@ Transform:
   - {fileID: 183527188}
   - {fileID: 53386879}
   - {fileID: 1138000404}
-  - {fileID: 158482380}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1870905473
@@ -9724,6 +9770,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MysteryBlock (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 2281235336086812007, guid: bd1855d988477d24cb3efb18af2f6f9d, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 262779853753743359, guid: b8da2c9b883396d49bde27be6ff60904, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10024,7 +10074,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1853628071}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 373381013936968963, guid: 11ed121131dccce4b96bf5a5365ba6a6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10095,3 +10145,4 @@ SceneRoots:
   - {fileID: 1899397679}
   - {fileID: 519420032}
   - {fileID: 1853628071}
+  - {fileID: 2863294960402833754}
