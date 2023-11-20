@@ -26,6 +26,12 @@ public class SideScrolling : MonoBehaviour
         Vector3 cameraPosition = transform.position;
         cameraPosition.y = underground ? undergroundHeight : height;
         transform.position = cameraPosition;
+
+        if (underground) {
+            AudioManager.Instance.PlayUndergroundTheme();
+        } else {
+            AudioManager.Instance.PlayTheme();
+        }
     }
 
 }

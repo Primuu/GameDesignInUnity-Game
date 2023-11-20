@@ -60,7 +60,7 @@ public class MenuManager : MonoBehaviour
         menuPanel.SetActive(false);
         Time.timeScale = 1f;
 
-        AudioManager.Instance.PlayMusicFromStart();
+        // AudioManager.Instance.PlayMusicFromStart();
     }
 
     public void QuitGame()

@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
         } else {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
     }
 
@@ -36,8 +37,14 @@ public class GameManager : MonoBehaviour
     private void OnDestroy()
     {
         if (Instance == this) {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
             Instance = null;
         }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        AudioManager.Instance.PlayMusicFromStart();
     }
 
     public void LoadLevel(int world, int stage, bool reset = false)
