@@ -69,6 +69,8 @@ public class GameManager : MonoBehaviour
         } else {
             GameOver();
         }
+
+        UIScoreManager.Instance.UpdateUI(score, coins, world, stage, lives);
     }
 
     public void ResetPlayerState()
@@ -76,6 +78,8 @@ public class GameManager : MonoBehaviour
         lives = 3;
         score = 0;
         coins = 0;
+
+        UIScoreManager.Instance.UpdateUI(score, coins, world, stage, lives);
     }
 
     private void GameOver()
@@ -90,6 +94,8 @@ public class GameManager : MonoBehaviour
     public void AddScore(int score)
     {
         this.score += score;
+        
+        UIScoreManager.Instance.UpdateUI(score, coins, world, stage, lives);
     }
 
     public void AddCoin() 
