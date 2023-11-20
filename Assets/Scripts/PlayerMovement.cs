@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
     // References
     private Rigidbody2D rb;
     private Camera cam;
+    private Collider2D col;
     private float inputAxis;
 
     // Movement 
@@ -24,7 +25,24 @@ public class PlayerMovement : MonoBehaviour
     private void Awake() 
     {
         rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
         cam = Camera.main;
+    }
+
+    private void OnEnable()
+    {
+        rb.isKinematic = false;
+        col.enabled = true;
+        velocity = Vector2.zero;
+        jumping = false;
+    }
+
+    private void OnDisable()
+    {
+        rb.isKinematic = true;
+        col.enabled = false;
+        velocity = Vector2.zero;
+        jumping = false;
     }
 
     private void Update()
