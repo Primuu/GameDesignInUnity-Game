@@ -53,6 +53,8 @@ public class Koopa : MonoBehaviour
         movement.direction = direction.normalized;
         movement.speed = shellSpeed;
         movement.enabled = true;
+
+        gameObject.layer = LayerMask.NameToLayer("Shell");
     }
-    
+
 }
