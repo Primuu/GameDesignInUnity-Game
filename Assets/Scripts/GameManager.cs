@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
     {
         this.score += score;
         
-        UIScoreManager.Instance.UpdateUI(score, coins, world, stage, lives);
+        UIScoreManager.Instance.UpdateUI(this.score, coins, world, stage, lives);
     }
 
     public void AddCoin() 

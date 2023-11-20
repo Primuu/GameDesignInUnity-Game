@@ -4,6 +4,8 @@ public class Koopa : MonoBehaviour
 {
     public Sprite shellSprite;
     public float shellSpeed = 12f;
+    
+    public int score = 200;
 
     private bool shelled;
     private bool pushed;
@@ -71,12 +73,14 @@ public class Koopa : MonoBehaviour
         GetComponent<AnimatedSprite>().enabled = false;
         GetComponent<DeathAnimation>().enabled = true;
         Destroy(gameObject, 3f);
+        GameManager.Instance.AddScore(score);
     }
 
     private void OnBecameInvisible()
     {
         if (pushed) {
             Destroy(gameObject);
+            GameManager.Instance.AddScore(score);
         }
     }
 
