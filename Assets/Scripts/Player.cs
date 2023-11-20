@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public bool starpowered { get; private set; }
 
     public AudioClip deathSound;
+    public AudioClip starpowerSound;
 
     private void Awake()
     {
@@ -101,6 +102,8 @@ public class Player : MonoBehaviour
     private IEnumerator StarpoweAnimation(float duration)
     {
         starpowered = true;
+        AudioManager.Instance.PauseMusic();
+        AudioManager.Instance.PlaySFX(starpowerSound);
 
         float elapsed = 0f;
 
@@ -116,6 +119,9 @@ public class Player : MonoBehaviour
         }
 
         activeRenderer.spriteRenderer.color = Color.white;
+
+        AudioManager.Instance.StopSFX();
+        AudioManager.Instance.ResumeMusic();
         starpowered = false;
     }
 

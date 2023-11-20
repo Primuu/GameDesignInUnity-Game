@@ -266,6 +266,7 @@ MonoBehaviour:
   smallRenderer: {fileID: 6832733471650041431}
   bigRenderer: {fileID: 6167683994720214655}
   deathSound: {fileID: 8300000, guid: 56ed6d8f74dede9488d2b47e38325960, type: 3}
+  starpowerSound: {fileID: 8300000, guid: ad37dac4fc9f2984c909b38e16bb0e43, type: 3}
 --- !u!1 &5736866538412389720
 GameObject:
   m_ObjectHideFlags: 0
