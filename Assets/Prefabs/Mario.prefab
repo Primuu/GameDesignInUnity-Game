@@ -265,6 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smallRenderer: {fileID: 6832733471650041431}
   bigRenderer: {fileID: 6167683994720214655}
+  deathSound: {fileID: 8300000, guid: 56ed6d8f74dede9488d2b47e38325960, type: 3}
 --- !u!1 &5736866538412389720
 GameObject:
   m_ObjectHideFlags: 0

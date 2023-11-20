@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     public bool dead => deathAnimation.enabled;
     public bool starpowered { get; private set; }
 
+    public AudioClip deathSound;
+
     private void Awake()
     {
         deathAnimation = GetComponent<DeathAnimation>();
@@ -40,6 +42,8 @@ public class Player : MonoBehaviour
         bigRenderer.enabled = false;
         deathAnimation.enabled = true;
 
+        AudioManager.Instance.StopMusic();
+        AudioManager.Instance.PlaySFX(deathSound);
         GameManager.Instance.ResetLevel(3f);
     }
 
