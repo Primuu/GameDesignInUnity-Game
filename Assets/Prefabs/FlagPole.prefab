@@ -98,6 +98,10 @@ MonoBehaviour:
   poleBottom: {fileID: 926195536911700007}
   castle: {fileID: 0}
   speed: 6
+  nextWorld: 1
+  nextStage: 1
+  flagSound: {fileID: 8300000, guid: fb67c9ba46f127f469d705abb9f07da4, type: 3}
+  stageEndSound: {fileID: 8300000, guid: c05d217f75cd6184e820ce883e46a03a, type: 3}
 --- !u!1 &6657681582429638526
 GameObject:
   m_ObjectHideFlags: 0

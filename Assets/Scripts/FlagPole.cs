@@ -10,9 +10,15 @@ public class FlagPole : MonoBehaviour
     public int nextWorld = 1;
     public int nextStage = 1;
 
+    public AudioClip flagSound;
+    public AudioClip stageEndSound;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player")) {
+            AudioManager.Instance.StopMusic();
+            AudioManager.Instance.PlaySFX(flagSound);
+
             StartCoroutine(MoveTo(flag, poleBottom.position));
             StartCoroutine(LevelCompleteSequence(other.transform));
         }
@@ -22,6 +28,8 @@ public class FlagPole : MonoBehaviour
     {
         player.GetComponent<PlayerMovement>().enabled = false;
 
+        AudioManager.Instance.PlaySFX(stageEndSound);
+
         yield return MoveTo(player, poleBottom.position);
         yield return MoveTo(player, player.position + Vector3.right);
         yield return MoveTo(player, player.position + Vector3.right + Vector3.down);
@@ -29,7 +37,7 @@ public class FlagPole : MonoBehaviour
 
         player.gameObject.SetActive(false);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4.5f);
 
         bool resetPlayer = true;
         GameManager.Instance.LoadLevel(nextWorld, nextStage, resetPlayer);
