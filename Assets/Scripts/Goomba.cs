@@ -4,6 +4,7 @@ public class Goomba : MonoBehaviour
 {
     public Sprite flatSprite;
     public int score = 100;
+    public AudioClip stomp;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -27,7 +28,9 @@ public class Goomba : MonoBehaviour
         GetComponent<AnimatedSprite>().enabled = false;
         GetComponent<SpriteRenderer>().sprite = flatSprite;
         Destroy(gameObject, 0.5f);
+
         GameManager.Instance.AddScore(score);
+        AudioManager.Instance.PlaySFX(stomp);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -42,7 +45,9 @@ public class Goomba : MonoBehaviour
         GetComponent<AnimatedSprite>().enabled = false;
         GetComponent<DeathAnimation>().enabled = true;
         Destroy(gameObject, 3f);
+
         GameManager.Instance.AddScore(score);
+        AudioManager.Instance.PlaySFX(stomp);
     }
 
 }

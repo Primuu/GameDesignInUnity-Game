@@ -242,6 +242,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shellSprite: {fileID: 21300000, guid: b990dc9fa743c2c449eae36369e180cd, type: 3}
   shellSpeed: 12
+  score: 200
+  stomp: {fileID: 8300000, guid: 45b67137a5a6a354db3805e6c7d96d9c, type: 3}
 --- !u!114 &8962134815527141022
 MonoBehaviour:
   m_ObjectHideFlags: 0
