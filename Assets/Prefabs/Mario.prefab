@@ -249,7 +249,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5837081161055521518}
   deadSprite: {fileID: 21300000, guid: f7623f403753aea42b4aac32a687deb9, type: 3}
-  wrongSprite: {fileID: 21300000, guid: 250c767f164b8404bb6792569f2ae6d4, type: 3}
 --- !u!114 &7298486518187255492
 MonoBehaviour:
   m_ObjectHideFlags: 0

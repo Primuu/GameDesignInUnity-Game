@@ -26,12 +26,15 @@ public class PowerUp : MonoBehaviour
             case Type.Coin:
                 GameManager.Instance.AddCoin();
                 break;
+
             case Type.ExtraLife:
                 GameManager.Instance.AddLife();
                 break;
+
             case Type.MagicMushroom:
-                // TODO
+                player.GetComponent<Player>().Grow();
                 break;
+
             case Type.Starpower:
                 // TODO
                 break;
