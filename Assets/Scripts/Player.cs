@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -43,6 +44,8 @@ public class Player : MonoBehaviour
 
         capsuleCollider.size = new Vector2(1f, 2f);
         capsuleCollider.offset = new Vector2(0f, 0.5f);
+
+        StartCoroutine(ScaleAnimation());
     }
 
     private void Shrink()
@@ -53,6 +56,30 @@ public class Player : MonoBehaviour
 
         capsuleCollider.size = new Vector2(1f, 1f);
         capsuleCollider.offset = new Vector2(0f, 0f);
+
+        StartCoroutine(ScaleAnimation());
+    }
+
+    private IEnumerator ScaleAnimation()
+    {
+        float elapsed = 0f;
+        float duration = 0.5f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+
+            if (Time.frameCount % 4 == 0) {
+                smallRenderer.enabled = !smallRenderer.enabled;
+                bigRenderer.enabled = !smallRenderer.enabled;
+            }
+
+            yield return null;
+        }
+
+        smallRenderer.enabled = false;
+        bigRenderer.enabled = false;
+        activeRenderer.enabled = true;
     }
 
 }
