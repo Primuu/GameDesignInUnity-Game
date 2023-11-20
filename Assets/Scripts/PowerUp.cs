@@ -13,6 +13,9 @@ public class PowerUp : MonoBehaviour
     public Type type;
     public float starpowerDuration = 10f;
 
+    public int magicMushroomScore = 1000;
+    public int starpowerScore = 1000;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player")) {
@@ -34,10 +37,12 @@ public class PowerUp : MonoBehaviour
 
             case Type.MagicMushroom:
                 player.GetComponent<Player>().Grow();
+                GameManager.Instance.AddScore(magicMushroomScore);
                 break;
 
             case Type.Starpower:
                 player.GetComponent<Player>().Starpower(starpowerDuration);
+                GameManager.Instance.AddScore(starpowerScore);
                 break;
         }
 
