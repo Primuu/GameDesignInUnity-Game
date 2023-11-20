@@ -6,7 +6,11 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Camera cam;
     private Collider2D col;
+    private Player player;
     private float inputAxis;
+
+    public AudioClip jumpAudioSmall;
+    public AudioClip jumpAudioBig;
 
     // Movement 
     private Vector2 velocity;
@@ -27,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         cam = Camera.main;
+        player = GetComponent<Player>();
     }
 
     private void OnEnable()
@@ -87,6 +92,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump")) {
             velocity.y = jumpForce;
             jumping = true;
+
+            if (player.small) {
+                AudioManager.Instance.PlaySFX(jumpAudioSmall);
+            } else if (player.big) {
+                AudioManager.Instance.PlaySFX(jumpAudioBig);
+            }
         }
     }
 

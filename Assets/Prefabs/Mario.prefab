@@ -232,6 +232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d77aaaa1a9c2b064fa0235dfb0857a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpAudioSmall: {fileID: 8300000, guid: 4359445d0c651cf4d8ba531520f1fb1f, type: 3}
+  jumpAudioBig: {fileID: 8300000, guid: bc85bbe0d85d526448536cb4b7b74a06, type: 3}
   moveSpeed: 8
   maxJumpHeight: 5
   maxJumpTime: 1
