@@ -8,6 +8,8 @@ public class Pipe : MonoBehaviour
     public Vector3 enterDirection = Vector3.down;
     public Vector3 exitDirection = Vector3.zero;
 
+    public AudioClip enterPipeSound;
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (connection != null && other.CompareTag("Player")) {
@@ -23,6 +25,8 @@ public class Pipe : MonoBehaviour
 
         Vector3 enteredPosition = transform.position + enterDirection;
         Vector3 enteredScale = Vector3.one * 0.5f;
+
+        AudioManager.Instance.PlaySFX(enterPipeSound);
 
         yield return Move(player, enteredPosition, enteredScale);
         yield return new WaitForSeconds(1f);

@@ -96,6 +96,7 @@ MonoBehaviour:
   enterKeyCode: 100
   enterDirection: {x: 1, y: 0, z: 0}
   exitDirection: {x: 0, y: 1, z: 0}
+  enterPipeSound: {fileID: 8300000, guid: 1ae334d19b689ad479410c1551a632ec, type: 3}
 --- !u!1 &1645907035753869064
 GameObject:
   m_ObjectHideFlags: 0
