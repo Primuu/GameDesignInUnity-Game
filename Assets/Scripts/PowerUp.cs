@@ -11,6 +11,7 @@ public class PowerUp : MonoBehaviour
     }
 
     public Type type;
+    public float starpowerDuration = 10f;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -36,7 +37,7 @@ public class PowerUp : MonoBehaviour
                 break;
 
             case Type.Starpower:
-                // TODO
+                player.GetComponent<Player>().Starpower(starpowerDuration);
                 break;
         }
 
