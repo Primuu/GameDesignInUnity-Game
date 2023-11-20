@@ -12482,6 +12482,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  coinSound: {fileID: 8300000, guid: f05a85a62c595974a965252f6092dad7, type: 3}
+  addLifeSound: {fileID: 8300000, guid: 63ff4744dd4ee6049b4fe1f13c990985, type: 3}
+  gameOverSound: {fileID: 8300000, guid: e77c0a85e290edd47950051be48662a9, type: 3}
 --- !u!4 &1899397679
 Transform:
   m_ObjectHideFlags: 0

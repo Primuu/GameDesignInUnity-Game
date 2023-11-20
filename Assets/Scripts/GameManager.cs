@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     public AudioClip coinSound;
     public AudioClip addLifeSound;
+    public AudioClip gameOverSound;
 
     private void Awake()
     {
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
     {
         ResetPlayerState();
         LoadLevel(1, 1);
+        AudioManager.Instance.ResumeMusic();
     }
 
     private void OnDestroy()
@@ -94,11 +96,9 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        // Load game over scene: SceneManager.LoadScene("GameOver");
-
-        // Invoke(nameof(NewGame), 3f);
-
-        NewGame();
+        AudioManager.Instance.PauseMusic();
+        AudioManager.Instance.PlaySFX(gameOverSound);
+        Invoke(nameof(NewGame), 4f);
     }
 
     public void AddScore(int score)
