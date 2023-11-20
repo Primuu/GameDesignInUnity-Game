@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public int stage { get; private set; }
     public int lives { get; private set; }
     public int coins { get; private set; }
+    public int score;
 
     private void Awake()
     {
@@ -20,13 +21,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        if (Instance == this) {
-            Instance = null;
-        }
-    }
-
     private void Start()
     {
         Application.targetFrameRate = 60;
@@ -35,18 +29,28 @@ public class GameManager : MonoBehaviour
 
     private void NewGame()
     {
-        lives = 3;
-        coins = 0;
-
+        ResetPlayerState();
         LoadLevel(1, 1);
     }
 
-    public void LoadLevel(int world, int stage)
+    private void OnDestroy()
+    {
+        if (Instance == this) {
+            Instance = null;
+        }
+    }
+
+    public void LoadLevel(int world, int stage, bool reset = false)
     {
         this.world = world;
         this.stage = stage;
 
+        if (reset) {
+            ResetPlayerState();
+        }
+
         SceneManager.LoadScene($"{world}-{stage}");
+        UIScoreManager.Instance.UpdateUI(score, coins, world, stage, lives);
     }
 
     public void ResetLevel(float delay)
@@ -57,12 +61,21 @@ public class GameManager : MonoBehaviour
     public void ResetLevel()
     {
         lives--;
+        coins = 0;
+        score = 0;
 
         if (lives > 0) {
             LoadLevel(world, stage);
         } else {
             GameOver();
         }
+    }
+
+    public void ResetPlayerState()
+    {
+        lives = 3;
+        score = 0;
+        coins = 0;
     }
 
     private void GameOver()
@@ -74,18 +87,29 @@ public class GameManager : MonoBehaviour
         NewGame();
     }
 
+    public void AddScore(int score)
+    {
+        this.score += score;
+    }
+
     public void AddCoin() 
     {
         coins++;
+        AddScore(200);
+
         if (coins == 100) {
             AddLife();
             coins = 0;
         }
+
+        UIScoreManager.Instance.UpdateUI(score, coins, world, stage, lives);
     }
 
     public void AddLife()
     {
         lives++;
+
+        UIScoreManager.Instance.UpdateUI(score, coins, world, stage, lives);
     }
 
 }

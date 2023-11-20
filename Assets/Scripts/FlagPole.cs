@@ -31,7 +31,8 @@ public class FlagPole : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        GameManager.Instance.LoadLevel(1, 1);
+        bool resetPlayer = true;
+        GameManager.Instance.LoadLevel(nextWorld, nextStage, resetPlayer);
     }
 
     private IEnumerator MoveTo(Transform subject, Vector3 destinantion)
