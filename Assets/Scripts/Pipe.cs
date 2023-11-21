@@ -34,7 +34,9 @@ public class Pipe : MonoBehaviour
         bool underground = connection.position.y < 0f;
         Camera.main.GetComponent<SideScrolling>().SetUnderground(underground);
 
+        // If the player is to be moved after exiting the pipe
         if (exitDirection != Vector3.zero) {
+            // Position from which the player starts the exit animation from the pipe
             player.position = connection.position - exitDirection;
             yield return Move(player, connection.position + exitDirection, Vector3.one);
         } else {

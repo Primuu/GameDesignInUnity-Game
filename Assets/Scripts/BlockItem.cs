@@ -22,6 +22,7 @@ public class BlockItem : MonoBehaviour
         triggerCollider.enabled = false;
         spriteRenderer.enabled = false;
 
+        // Delay for block's animation 
         yield return new WaitForSeconds(0.25f);
 
         spriteRenderer.enabled = true;

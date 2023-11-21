@@ -34,7 +34,6 @@ public class Player : MonoBehaviour
                 Death();
             }
         }
-
     }
 
     public void Death()

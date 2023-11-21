@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public int stage { get; private set; }
     public int lives { get; private set; }
     public int coins { get; private set; }
-    public int score;
+    public int score { get; private set; }
 
     public AudioClip coinSound;
     public AudioClip addLifeSound;

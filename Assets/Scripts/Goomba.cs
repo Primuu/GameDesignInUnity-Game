@@ -27,10 +27,12 @@ public class Goomba : MonoBehaviour
         GetComponent<EntityMovement>().enabled = false;
         GetComponent<AnimatedSprite>().enabled = false;
         GetComponent<SpriteRenderer>().sprite = flatSprite;
+
+        AudioManager.Instance.PlaySFX(stomp);
+        
         Destroy(gameObject, 0.5f);
 
         GameManager.Instance.AddScore(score);
-        AudioManager.Instance.PlaySFX(stomp);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
