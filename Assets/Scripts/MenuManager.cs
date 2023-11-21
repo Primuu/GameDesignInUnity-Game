@@ -3,10 +3,31 @@ using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
+    public static MenuManager Instance { get; private set; }
+
     private bool play = false;
     public TextMeshProUGUI playButtonText;
     public GameObject menuPanel;
     public GameObject restartButton;
+
+    public bool isMenuActive => menuPanel.activeSelf;
+
+    private void Awake()
+    {
+        if (Instance == null) {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this) {
+            Instance = null;
+        }
+    }
 
     private void Start()
     {
@@ -59,8 +80,6 @@ public class MenuManager : MonoBehaviour
 
         menuPanel.SetActive(false);
         Time.timeScale = 1f;
-
-        // AudioManager.Instance.PlayMusicFromStart();
     }
 
     public void QuitGame()

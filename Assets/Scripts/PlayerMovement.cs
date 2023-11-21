@@ -52,6 +52,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (MenuManager.Instance.isMenuActive) return;
+
         HorizontalMovement();
 
         grounded = rb.Raycast(Vector2.down);
