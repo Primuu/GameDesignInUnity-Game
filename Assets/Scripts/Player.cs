@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
         bigRenderer.enabled = false;
         deathAnimation.enabled = true;
 
+        AudioManager.Instance.StopSFX();
         AudioManager.Instance.StopMusic();
         AudioManager.Instance.PlaySFX(deathSound);
         GameManager.Instance.ResetLevel(3f);
