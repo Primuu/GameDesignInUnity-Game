@@ -31,6 +31,8 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
         playButtonText.text = "PLAY";
         menuPanel.SetActive(true);
@@ -51,9 +53,13 @@ public class MenuManager : MonoBehaviour
         restartButton.SetActive(play);
 
         if (menuPanel.activeSelf) {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0f;
             AudioManager.Instance.PauseMusic();
         } else {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked; 
             Time.timeScale = 1f;
             AudioManager.Instance.ResumeMusic();
         }
@@ -61,6 +67,8 @@ public class MenuManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked; 
         menuPanel.SetActive(false);
         Time.timeScale = 1f;
 
@@ -78,6 +86,8 @@ public class MenuManager : MonoBehaviour
     {
         GameManager.Instance.LoadLevel(1, 1, true);
 
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked; 
         menuPanel.SetActive(false);
         Time.timeScale = 1f;
     }
